@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        @charset "ISO-8859-1";
+
+body {
+            font-family: Arial, sans-serif;
+
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background:url('https://icap.columbia.edu/wp-content/uploads/4J83oPZw.jpeg') no-repeat;
+            background-size:cover;
+            background-position:center;
+            -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(2px);
+
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 50px;
+            border:solid;
+            border-radius: 47px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-color: brown;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            color:white;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: solid;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #0e2433;
+        }
+
+        input[type="submit"] {
+            background-color: #45b6fe;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message {
+            background-color: #45b6fe;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .form-group .icon{
+        position:absolute;
+        color:black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN FORM</title>
+    <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <div class="message" th:if="${param.error}">
+        INVALID USERNAME OR PASSWORD
+    </div>
+    <div class="message" th:if="${param.logout}">
+        LOGOUT SUCCESSFULLY
+    </div>
+
+    <h2 style="color:black"><u>ADMIN AND USER LOGIN PAGE</u></h2>
+    <form
+            th:action="@{/login}"
+            method="post"
+
+    >
+
+
+        <div class="form-group">
+            <span class="icon" style="right: 529px;
+            margin-top: 35px;"><ion-icon name="mail"></ion-icon></span>
+            <label for="username">EMAIL ID:</label>
+            <input  type="email" id="username" name="username" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <span class="icon" style="right: 521px;
+    margin-top: 35px;">
+                <ion-icon name="lock-closed"></ion-icon></span>
+            <label for="password">PASSWORD:</label>
+            <input  type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <input type="submit" value="Login">
+    </form>
+
+</div>
+<!--Your login form goes here-->
+<p style="color:white;">Don't have an account? <a th:href="@{/registration}">Register here</a></p>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Donation Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        @charset "ISO-8859-1";
+
+ body {
+             font-family: Arial, sans-serif;
+             color: white;
+             text-align: center;
+             margin: 0;
+             padding: 0;
+             background:url('https://icap.columbia.edu/wp-content/uploads/4J83oPZw.jpeg') no-repeat;
+            background-size:cover;
+            background-position:center;
+            -webkit-backdrop-filter: blur(15px);
+             backdrop-filter: blur(2px);
+
+         }
+
+         .container {
+             max-width: 400px;
+             margin: 0 auto;
+             padding: 50px;
+             border:solid;
+             border-radius: 47px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+             border-color: brown;
+
+         }
+      h1 {
+            color: #45b6fe;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            color:black;
+
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+         input[type="radio"]{
+            width: 100%;
+            padding: 10px;
+            border: solid;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #0e2433;
+        }
+
+        input[type="submit"] {
+            background-color: #45b6fe;
+            color: white;
+            padding: 20px 40px;
+            width:150px;
+            height:50px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="color:black;"><u>ADD DONAR</u></h1>
+    <hr>
+
+    <form action="#" th:action="@{/save}" th:object="${user}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="form-group">
+            <label for="fullname">FULL NAME</label>
+            <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">EMAIL ID</label>
+            <input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">PASSWORD</label>
+            <input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+            <label for="bloodgroup">BLOOD GROUP</label>
+
+            <select th:field="*{bloodgroup}" id="bloodgroup" name="bloodgroup" required>
+                <option value="Select bloodgroup">******SELECT BLOODGROUP******</option>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
+                <option value="Bombay">Bombay</option>
+            </select>
+
+        </div>
+
+        <div style="color:black;" class="form-group">
+            <label>GENDER</label>
+            <div class="radio-group">
+                <input th:field="*{gender}" type="radio" id="male" name="gender" value="male" required>
+                <label for="male">MALE</label>
+            </div>
+            <div class="radio-group">
+                <input th:field="*{gender}" type="radio" id="female" name="gender" value="female" required>
+                <label for="female">FEMALE</label>
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label for="age">AGE</label>
+                <input th:field="*{age}" type="text" id="age" name="age" placeholder="Enter your age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">ADDRESS</label>
+                <input th:field="*{address}" type="text" id="address" name="address" placeholder="Enter your address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneno">CONTACT NUMBER</label>
+                <input th:field="*{phoneno}" type="text" id="phoneno" name="phoneno" placeholder="Enter your phoneno" required>
+            </div>
+        <div class="form-group">
+
+            <label for="medical">ANY MEDICAL ISSUES:</label>
+            <input th:field="*{medical}" type="text" id="medical" name="medical" placeholder="Enter here" required>
+        </div>
+        <div class="form-group">
+
+            <label for="num">NO OF TIME BLOOD DONATED:</label>
+            <input th:field="*{num}" type="text" id="num" name="num" placeholder="Enter here" required>
+        </div>
+
+        <div style="color:black;" class="form-group">
+            <span class="icon" style="right: 519px;
+    margin-top: 35px;">
+                <ion-icon name="man"></ion-icon></span>
+            <label>ROLE</label>
+            <label><input  type="radio" th:field="*{role}"  name="role" value="USER" placeholder="ROLE" required>DONOR
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-info col-2" style="width: 129px;">Save Donor</button>
+    </form>
+    <br>
+    <a th:href="@{/admin-page}">Back to List</a>
+</div>
+
+</body>
+</html>

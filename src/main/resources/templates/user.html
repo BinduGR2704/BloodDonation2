@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME USER, HAPPY TO SEE YOU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:lavender;
+            color: white;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .header {
+            background-color:white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header1 {
+            background-color:lavender;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+
+
+
+
+            border:solid;
+            border-radius: 47px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-color: brown;
+        }
+
+        h2 {
+            color: brown;
+        }
+        h3{
+        color:black;
+        }
+
+        h1{
+        color:black;
+        }
+
+        /* Add more styles and components for your dashboard here */
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 style="color:brown"><u>WELCOME [[${user.getFullname()}]]</u></h1>
+</div>
+<div class="container">
+    <h2>THANK YOU [[${user.getFullname()}]], FOR DONATING BLOOD</h2>
+    <br>
+    <h3 style="text-align:center;"><b>Blood Donation: Do’s And Don’ts To Keep In Mind</b></h3>
+    <h3>Do’s</h3>
+    <ul style="color:black;">
+        <li>Eat a nutritious meal before donating. The donor should not be fasting, and the last meal should have been taken at least 4 hours prior to donation.</li>
+        <li>Drink plenty of fluids before donating blood. Being well-hydrated helps ensure an easier blood draw and reduces the risk of feeling lightheaded or dizzy.</li>
+        <li>Give correct information when answering the screening questions about your medical history, medications, and lifestyle habits. By providing this information, the safety of both the donor and the recipient is ensured.</li>
+
+    </ul>
+    <h3>Don'ts</h3>
+    <ul style="color:black;">
+        <li>Don't donate if you are ill.</li>
+        <li>Don't donate blood if you have cardiac disease, epilepsy, liver disease, or kidney disease.</li>
+        <li>Don't donate blood if you are asthmatic and on steroids, diabetic and on insulin, have cancer, severe allergic disorders, bleeding disorders, etc.</li>
+        <li>Don't consume alcohol within 24 hours of a blood donation.</li>
+        <li>Don't donate if you engage in high-risk behaviours such as intravenous drug use or engaging in unprotected sex with multiple partners, due to the potential risks of transmitting infectious diseases.</li>
+
+    </ul>
+    <h3>Fainting</h3>
+    <ul style="color:black;">
+        <li>If you feel faint after leaving the donation centre – light-headed, dizzy, shaky, hot or
+            nauseous – lie down and raise your legs if possible</li>
+        <li>Make sure you tell someone that you are feeling unwell so they can keep an eye on
+            you.</li>
+        <li>Move slowly and carefully, taking care to sit and stand up slowly when you feel well
+            enough. </li>
+        <li>Drink plenty of fluids</li>
+        <li>If you do not feel better within a few hours consult your doctor or your local blood
+            donation helpline</li>
+    </ul>
+    <h3>Bruising
+    </h3>
+    <ul style="color:black;">
+        <li>Bruising is possible after blood donation, and although sometimes the bruise may
+            look quite serious and dramatic most are harmless and will disappear over time.</li>
+        <li>It is normal for a bruise to spread out before fading.
+        </li>
+        <li>Rest: allow time for the arm to heal, avoid lifting heavy objects such as heavy
+            shopping or weights at the gym. Light gentle movement is recommended.
+            After 36 hours return to normal activity.</li>
+        <li> Ice: place an ice pack or a pack of frozen vegetables, wrapped in a cloth, onto
+            the affected area. Do not place the ice directly onto the skin as this my cause
+            freeze burns</li>
+        <li>Compression: press on the area where the needle was inserted</li>
+        <li> Elevation: when resting raise your arm on a pillow whenever possible</li>
+        <li>After 36 hours place heat on the affected area, in the form of a warm cloth. This can
+            be applied to the bruise for approximately 10 minutes, 2-3 times a day and may help
+            increase blood flow to the bruised area allowing the skin to reabsorb the bruise more
+            quickly.</li>
+    </ul>
+    <h3>Arm pain</h3>
+    <p style="color:black;">You should be comfortable during your donation session. If your arm hurts or feels
+        sore while giving blood please alert a member of staff.<br>
+        Pain or discomfort in the arm or hand may be related to a possible tendon or nerve
+        injury, or a punctured artery. These are very rare risks associated with needle
+        insertion, and clinic staff will be able to help in such an event.<br>
+        If the pain persists after the donation session do not stop arm normal arm
+        movements as this could cause further complications – gentle exercise will help your
+        recovery.<br>
+        If you experience any of the following please contact your doctor or your local blood
+        donation helpline to gain medical assistance as early as possible:<br></p>
+    <ul style="color:black;">
+        <li>stiffness, weakness or a dull ache in the arm
+        </li>
+        <li> pain that gets significantly worse when you move the affected arm</li>
+        <li> severe or worsening pins and needles
+        </li>
+        <li> severe or worsening swelling or the development of a lump in the arm</li>
+        <li> redness and/or inflammation of the donation arm
+        </li>
+        <li> change of skin temperature or colour to your donation arm or hand.</li>
+    </ul>
+    <h3>Remember to include Vitamin C</h3>
+    <p style="color:black;">Vitamin C helps you to absorb more iron. So to get the most from the food you eat,
+        have vitamin C rich foods with meals: for example fresh fruits and vegetables, or
+        drinks such as fresh orange juice.<br>
+        Avoid drinking tea just before, after or with meals as this may reduce the absorption
+        of iron from foods</p>
+    <div class="header1" style="    font-size: xx-small;">
+        <h1 style="color:brown; text-align:center;">CONTACT US:8073939935<br>No.21 4th Block Kanakpura Main Road,Banashankari,Banglore</h1>
+        <span style="font-size: medium;" sec:authorize="isAuthenticated">
+        <a th:href="@{/logout}">
+         Logout
+
+        </a>
+
+        </span>
+    </div>
+
+
+
+
+</div>
+</body>
+</html>
