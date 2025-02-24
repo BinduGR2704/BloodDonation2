@@ -7,7 +7,7 @@ as needed.
 Technologies Used:
 
 Backend : Java
-Frontend : HTML, CSS
+Frontend : HTML, CSS, Javascript
 Database : MySQL
 
 Installation:
